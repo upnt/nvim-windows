@@ -1,23 +1,7 @@
-inoremap jj <ESC>
-nnoremap <silent><ESC><ESC> :nohlsearch<CR>
-let mapleader="\<Space>"
-
 let g:python_host_prog='C:\Users\shun-\anaconda3\envs\pynvim2\python.exe'
 let g:python3_host_prog='C:\Users\shun-\anaconda3\envs\pynvim3\python.exe'
-set number
-set relativenumber
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8,utf-16le
-set foldlevel=2
 
-let g:netrw_liststyle=1
-let g:netrw_banner=0
-let g:netrw_sizestyle="H"
-let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
-let g:netrw_preview=1
+let mapleader="\<Space>"
 
 "dein Scripts-----------------------------
 if &compatible
@@ -60,3 +44,26 @@ else
     colorscheme pencil
     let g:lightline.colorscheme = 'selenized_light'
 endif
+
+inoremap jj <ESC>
+nnoremap <silent><ESC><ESC> :nohlsearch<CR>
+
+
+set number
+set relativenumber
+set expandtab
+
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set scrolloff=5
+
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8,utf-16le
+set foldlevel=2
+
+let g:netrw_liststyle=1
+let g:netrw_banner=0
+let g:netrw_sizestyle="H"
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+let g:netrw_preview=1

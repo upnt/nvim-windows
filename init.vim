@@ -52,6 +52,7 @@ nnoremap <silent><ESC><ESC> :nohlsearch<CR>
 set number
 set relativenumber
 set expandtab
+set hlsearch
 
 set shiftwidth=4
 set tabstop=4

@@ -1,0 +1,61 @@
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_highlight_references_enabled = 1
+let g:lsp_signs_error = {'text': '✗'}
+nnoremap <silent> <Leader>r :LspRename<CR>
+nnoremap <silent> <Leader>h :LspHover<CR>
+nnoremap <silent> <Leader>n :LspNextError<CR>
+nnoremap <silent> <Leader>N :LspPreviousError<CR>
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
+
+
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+lazy = 1
+on_i = 1
+depends = ['deoplete-vim-lsp']
+hook_source = '''
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 0,
+    \ 'camel_case': v:false,
+    \ 'ignore_case': v:false,
+    \ 'refresh_always': v:false,
+    \ 'smart_case': v:true
+    \ })
+imap <expr><Tab> pumvisible() ?
+    \ "\<C-n>" : neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<Tab>"
+'''
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+lazy = 1
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+lazy = 1
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets', 'vim-lsp-neosnippet']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'thomasfaingnaert/vim-lsp-neosnippet'
